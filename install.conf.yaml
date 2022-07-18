@@ -1,0 +1,22 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ["~"]
+
+- link:
+    ~\.config\powershell\Profile.ps1: config\powershell\Profile.ps1
+    ~\.config\powershell\theme.omp.json: config\powershell\theme.omp.json
+
+- create:
+    # - ~/Dev
+    - ~/Tutorials
+    - ~/GitHub
+
+- shell:
+    - command: powershell.exe ~\.config\powershell\Profile.ps1
+      stdout: true
+      stderr: true
+    - command: powershell.exe .\setup\setup_scoop.ps1
+      stdout: true
+      stderr: true
